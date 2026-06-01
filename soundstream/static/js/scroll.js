@@ -189,9 +189,13 @@
             if (audio && preview) {
                 detener();
                 audio.src = preview;
-                audio.play().catch(() => {});
-                btn.classList.add('playing');
-                botonActual = btn;
+                audio.load();
+                audio.play().then(() => {
+                    btn.classList.add('playing');
+                    botonActual = btn;
+                }).catch((err) => {
+                    flashToast('Error de audio: ' + (err.message || err.name));
+                });
             }
 
             // Registrar la reproduccion en la BD (CRUD)
