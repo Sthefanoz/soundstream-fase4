@@ -32,7 +32,7 @@ publica de Deezer, y preview de audio de 30s para cada cancion.
 ### 1. Clonar y crear el entorno
 
 ```powershell
-git clone https://github.com/TU_USUARIO/soundstream-fase4.git
+git clone https://github.com/Sthefanoz/soundstream-fase4.git
 cd soundstream-fase4
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
