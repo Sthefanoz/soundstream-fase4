@@ -181,6 +181,13 @@ def contratar_plan(request, plan):
             fecha_fin=hoy + timedelta(days=30),
             estado='Activa',
         )
+        # Con managed=False, segun la version de mssql-django/Python, el insert
+        # no siempre devuelve el PK autogenerado. Si falta, lo recuperamos.
+        if not suscripcion.pk:
+            suscripcion = (Suscripcion.objects
+                           .filter(usuario=usuario, estado='Activa',
+                                   tipo_plan=info['nombre'], fecha_inicio=hoy)
+                           .order_by('-id_suscripcion').first())
         if es_pago:
             Pago.objects.create(
                 suscripcion=suscripcion,
