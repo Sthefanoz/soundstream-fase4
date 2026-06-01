@@ -99,7 +99,7 @@ Abre `http://127.0.0.1:8000/`.
 
 - **Administrador** (acceso al panel de gestion del catalogo):
   - email: `sthefanozambrano1@gmail.com`
-  - password: la que registraste
+  - password: `1706895503Sm.`
 
 - **Usuarios normales** (datos reales de Fase 3 con contrasena demo):
   - email: `michelle.altamirano1@email.com` / password `pass001`
@@ -132,14 +132,6 @@ UPDATE Operacion.Usuario SET rol='admin' WHERE email='tu_correo@email.com';
 | `/operacion/historial/`      | Historial de reproducciones y pagos |
 | `/operacion/regalias/`       | Reporte de regalias por artista |
 | `/catalogo/gestion/`         | Panel admin: CRUD de Artistas, Albumes y Canciones |
-
-**CRUD operativo sobre SQL Server** (ideal para el video):
-- Playlist: crear / editar / eliminar / agregar canciones / quitar canciones.
-- Suscripcion y Pago: se crean al contratar un plan.
-- Reproduccion: cada play incrementa `numReproducciones` e inserta una fila
-  en `Operacion.Reproduccion`.
-- Catalogo (solo admin): CRUD completo sobre `Catalogo.Artista`,
-  `Catalogo.Album` y `Catalogo.Cancion`.
 
 ---
 
